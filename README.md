@@ -1,20 +1,25 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Industrial Worker Safety AI
 
-# Run and deploy your AI Studio app
+An AI-powered IoT safety platform aligning with UN SDGs (Sustainable Development Goals) 3 & 8. This platform features real-time sensor telemetry, predictive worker health diagnostics, an automated emergency evacuation console, and compliance tracking under the Indian Factories Act 1948.
 
-This contains everything you need to run your app locally.
+---
 
-View your app in AI Studio: https://ai.studio/apps/de8d6fa6-130e-46e3-a557-aae68d20abfe
+## Features
+* **Real-time Telemetry:** Monitor IoT sensor data from the factory floor instantly.
+* **Predictive Diagnostics:** Assess worker health indicators to prevent incidents before they happen.
+* **Emergency Console:** Automated evacuation routing and rapid response coordination.
+* **Compliance Tracking:** Built-in verification aligning with the Indian Factories Act 1948.
+
+---
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
+### Prerequisites
+* Node.js (v18 or higher recommended)
 
+### Installation & Setup
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/Ricchi25/Industrial-Worker-Safety-AI.git](https://github.com/Ricchi25/Industrial-Worker-Safety-AI.git)
+   cd Industrial-Worker-Safety-AI
