@@ -7,7 +7,9 @@ import EmergencyButton from './components/EmergencyButton';
 import FactoriesActRef from './components/FactoriesActRef';
 import LeanCanvas from './components/LeanCanvas';
 import ReportGenerator from './components/ReportGenerator';
-import { ShieldCheck, Flame, Users, BookOpen, FileText, Bot, Clock, AlertTriangle, AlertOctagon } from 'lucide-react';
+import SafetyQuiz from './components/SafetyQuiz';
+import PlumeSimulator from './components/PlumeSimulator';
+import { ShieldCheck, Flame, Users, BookOpen, FileText, Bot, Clock, AlertTriangle, AlertOctagon, GraduationCap, Compass } from 'lucide-react';
 
 export default function App() {
   // Environmental Sensor States
@@ -76,7 +78,7 @@ export default function App() {
   const [activePreset, setActivePreset] = useState<string>('normal');
 
   // Interactive Tabbed Navigation for Right Console
-  const [activeTab, setActiveTab] = useState<'chat' | 'database' | 'canvas' | 'report'>('chat');
+  const [activeTab, setActiveTab] = useState<'chat' | 'database' | 'canvas' | 'report' | 'training' | 'simulator'>('chat');
 
   // Emergency overlay trigger state
   const [isEmergencyTriggered, setIsEmergencyTriggered] = useState<boolean>(false);
@@ -192,6 +194,30 @@ export default function App() {
               AI Suraksha Chat
             </button>
             <button
+              onClick={() => setActiveTab('simulator')}
+              className={`flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex-1 ${
+                activeTab === 'simulator'
+                  ? 'bg-natural-olive text-white shadow-sm'
+                  : 'text-natural-text hover:text-natural-dark hover:bg-natural-beige/50'
+              }`}
+              id="btn-tab-simulator"
+            >
+              <Compass className="w-4 h-4" />
+              Drift Simulator
+            </button>
+            <button
+              onClick={() => setActiveTab('training')}
+              className={`flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex-1 ${
+                activeTab === 'training'
+                  ? 'bg-natural-olive text-white shadow-sm'
+                  : 'text-natural-text hover:text-natural-dark hover:bg-natural-beige/50'
+              }`}
+              id="btn-tab-training"
+            >
+              <GraduationCap className="w-4 h-4" />
+              Suraksha Quiz
+            </button>
+            <button
               onClick={() => setActiveTab('database')}
               className={`flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex-1 ${
                 activeTab === 'database'
@@ -208,7 +234,7 @@ export default function App() {
               className={`flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex-1 ${
                 activeTab === 'canvas'
                   ? 'bg-natural-olive text-white shadow-sm'
-                  : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100'
+                  : 'text-natural-text hover:text-natural-dark hover:bg-natural-beige/50'
               }`}
               id="btn-tab-canvas"
             >
@@ -220,7 +246,7 @@ export default function App() {
               className={`flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer whitespace-nowrap flex-1 ${
                 activeTab === 'report'
                   ? 'bg-natural-olive text-white shadow-sm'
-                  : 'text-slate-500 hover:text-slate-800 hover:bg-slate-100'
+                  : 'text-natural-text hover:text-natural-dark hover:bg-natural-beige/50'
               }`}
               id="btn-tab-report"
             >
@@ -238,6 +264,8 @@ export default function App() {
                 onEmergencyTrigger={() => setIsEmergencyTriggered(true)}
               />
             )}
+            {activeTab === 'simulator' && <PlumeSimulator sensors={sensors} />}
+            {activeTab === 'training' && <SafetyQuiz />}
             {activeTab === 'database' && <FactoriesActRef />}
             {activeTab === 'canvas' && <LeanCanvas />}
             {activeTab === 'report' && <ReportGenerator />}
