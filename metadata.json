@@ -1,0 +1,6 @@
+{
+  "name": "Industrial Worker Safety AI",
+  "description": "An AI-powered environmental monitoring and health safety platform for industrial workers, aligned with SDG 3 and SDG 8. Features real-time gas leakage simulation, Factories Act 1948 safety checklists, Hinglish AI Safety Officer chatbot, and a Lean Canvas model.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
