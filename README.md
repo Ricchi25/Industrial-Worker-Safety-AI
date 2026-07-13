@@ -1,6 +1,6 @@
 # Industrial Worker Safety AI
 
-An AI-powered IoT safety platform aligning with UN SDGs (Sustainable Development Goals) 3 & 8. This platform features real-time sensor telemetry, predictive worker health diagnostics, an automated emergency evacuation console, and compliance tracking under the Indian Factories Act 1948.
+An AI-powered IoT safety platform aligning with UN SDGs 3 & 8. This platform features real-time sensor telemetry, predictive worker health diagnostics, an automated emergency evacuation console, and compliance tracking under the Indian Factories Act 1948.
 
 ---
 
@@ -20,6 +20,10 @@ An AI-powered IoT safety platform aligning with UN SDGs (Sustainable Development
 ### Installation & Setup
 
 1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/Ricchi25/Industrial-Worker-Safety-AI.git](https://github.com/Ricchi25/Industrial-Worker-Safety-AI.git)
-   cd Industrial-Worker-Safety-AI
+```bash
+git clone [https://github.com/Ricchi25/Industrial-Worker-Safety-AI.git](https://github.com/Ricchi25/Industrial-Worker-Safety-AI.git)
+cd Industrial-Worker-Safety-AI
+npm install
+# Add your project configuration here
+API_KEY=your_key_here
+npm run dev
